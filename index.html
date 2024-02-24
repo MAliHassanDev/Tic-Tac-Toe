@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Muhammad Ali Hassan">
+        <meta name="description" content="coding for fun">
+        <meta name="viewsheet" content="width=device-width, initial-scale = 1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Coding</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section id="game-boardContainer">
+            <div class="gameheading">
+                <button class="player">X<span class="playerX-score">-</span></button>
+                <button class="player">O<span class="playerO-score">-</span></button>
+            </div>
+            <div class="player-information">
+                <span id="current-turn"></span>
+                <span id="turn-text">Select Player</span>
+            </div>
+            <div class="game-board">
+                <button class="board-cell c1"></button>
+                <button class="board-cell c2"></button>
+                <button class="board-cell c3"></button>
+                <button class="board-cell c4"></button>
+                <button class="board-cell c5"></button>
+                <button class="board-cell c6"></button>
+                <button class="board-cell c7"></button>
+                <button class="board-cell c8"></button>
+                <button class="board-cell c9"></button>
+            </div>
+            <div class="gameOverBoard">
+                <p class="player-won"></p>
+                <p class="result-text">Winner</p>
+            </div>
+            <div class="restart-button">
+                <button id="restartButton">Restart game</button>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
