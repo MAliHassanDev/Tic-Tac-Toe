@@ -11,27 +11,6 @@ function generateComputerMove(compChoice){
     let player = (compChoice=='X') ? 'O' : 'X';
 
 
-    // check for winning move 
-
-    // for(let i=0;i<winningCombinations.length;i++){
-    //     let [a,b,c] = winningCombinations[i];
-    //     if(gameBoardArray[a[0]][a[1]].innerHTML == compChoice && gameBoardArray[b[0]][b[1]].innerHTML == compChoice
-    //     && gameBoardArray[c[0]][c[1]].innerHTML == ''){
-    //         console.log('Winning')
-    //         return c;
-    //     }
-    // }
-
-
-    // check for opponent block
-    // for(let i=0;i<winningCombinations.length;i++){
-    //     let [a,b,c] = winningCombinations[i];
-    //     if(gameBoardArray[a[0]][a[1]].innerHTML != '' && gameBoardArray[b[0]][b[1]].innerHTML != '' && gameBoardArray[c[0]][c[1]].innerHTML == '' &&
-    //     gameBoardArray[a[0]][a[1]].innerHTML != compChoice && gameBoardArray[b[0]][b[1]].innerHTML != compChoice){
-    //         console.log("Oponent Block")
-    //         return c;
-    //     }
-    // }
     for(let i=0;i<winningCombinations.length;i++){
         let [a,b,c] = winningCombinations[i];
         let cells = [gameBoardArray[a[0]][a[1]],gameBoardArray[b[0]][b[1]],gameBoardArray[c[0]][c[1]]];
@@ -48,9 +27,9 @@ function generateComputerMove(compChoice){
                 }
             }
         }
-        if(playerCount == 2 && emptyCellCount == 1){
+        if(compCount === 2 && emptyCellCount == 1){
             return emptyCellIndex;
-        }else if(compCount === 2 && emptyCellCount == 1){
+        }else if(playerCount == 2 && emptyCellCount == 1){
             return emptyCellIndex;
         }
     }
