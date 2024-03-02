@@ -140,6 +140,6 @@ body{
 
 @media screen and (max-width: 600px){
    #game-boardContainer{
-    margin-top: 1.3rem;
+    margin-top: .3rem;
    }
 }
