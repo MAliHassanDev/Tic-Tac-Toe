@@ -6,6 +6,45 @@ function showCurrentPlayer(currentplayer){
     currentTurn.innerHTML = player.charAt(0);
 }
 
+
+
+
+function playUserSound(){
+    const userSound = new Audio();
+    userSound.src = 'audio/User.mp3'
+    userSound.play();
+}
+
+function playCompSound(){
+    const compSound = new Audio();
+    compSound.src = 'audio/Computer.mp3';
+    compSound.play();
+}
+
+function playStartSound(){
+    const startSound = new Audio();
+    startSound.src = 'audio/start.mp3'
+    startSound.play();
+}
+
+function playLosingSound(){
+    const looseSound = new Audio();
+    looseSound.src = 'audio/Loosing.mp3'
+    looseSound.play();
+}
+
+function playWinningSound(){
+    const winningSound = new Audio();
+    winningSound.src = 'audio/Winning.mp3'
+    winningSound.play();
+}
+
+function playClickSound(){
+    const clickSound = new Audio();
+    clickSound.src = 'audio/click.wav';
+    clickSound.play();
+}
+
 function generateComputerMove(compChoice){
     
     let player = (compChoice=='X') ? 'O' : 'X';
@@ -117,21 +156,25 @@ function gameOver(player){
     currentTurn.innerHTML = '';
     turnText.innerHTML = 'Game Over'
     if(player == 'X' && playerXCount!=0){
+        playWinningSound();
         playerXScore.innerHTML = playerXCount;
         resultText.innerHTML = 'Winner'
     } else if(player == 'O'&& playerOCount!=0){
+        playWinningSound();
         playerOScore.innerHTML = playerOCount;
         resultText.innerHTML = 'Winner'
     }
     if(player!=='draw'){
         playerWon.innerHTML = player;
     }else {
+        playLosingSound();
         playerWon.innerHTML = 'XO';
         resultText.innerHTML = 'DRAW'
     }
 }
 
 function restartGame(){
+    playClickSound();
     gameBoard.classList.remove('game-over');
     boardCell.forEach(cell =>{
         cell.innerHTML = '';
@@ -169,12 +212,14 @@ function storeComputerChoice(compChoice){
         }
         
     }
+    
 }
 
 
 
 let playerChar;
 let cellClickHandler = (cell) =>{
+    playUserSound();
     if(cell.innerHTML.length<1){
         cell.innerHTML = playerChar; 
         let result = checkResult(playerChar)
@@ -191,10 +236,11 @@ let cellClickHandler = (cell) =>{
             cellConatiner.classList.add('computer-turn');
             updatePlayerTurn(compChoice);
             setTimeout( ()=> {
+                playCompSound();
+                updatePlayerTurn(playerChar)
                 storeComputerChoice(compChoice)
                 cellConatiner.classList.remove('computer-turn');
-                updatePlayerTurn(playerChar)
-            },2000);
+            },1500);
             
         }
     }
@@ -227,6 +273,9 @@ function updateGameCellArray(){
     }
 }
 
+
+
+
 const playerChoice = document.querySelectorAll('.player');
 const gameBoard= document.getElementById('game-boardContainer');
 const turnText = document.getElementById('turn-text');
@@ -258,6 +307,7 @@ const winningCombinations = [
 ];
 playerChoice.forEach(player =>{
     player.addEventListener('click', () =>{
+        playStartSound();
         updateGameCellArray();
         startGame(player.textContent);
         showCurrentPlayer(player);
@@ -267,11 +317,6 @@ playerChoice.forEach(player =>{
 restartButton.addEventListener('click', ()=>{
     restartGame();
 });
-
-
-
-
-
 
 
 
