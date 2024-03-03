@@ -143,4 +143,8 @@ body{
     pointer-events: all;
 }
 
-
+@media screen and (max-width: 600px){
+  #game-boardContainer{
+    transform: scale(1);
+  }
+}
