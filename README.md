@@ -4,7 +4,7 @@ A web based Tic Tac toe game with AI mode.
 
 ## [Live Preview](https://malihassandev.github.io/Calculator/)
 
-![Tic Tac Toe Project demo picture](projectDemoimage.png/preview.png)
+![Tic Tac Toe Project demo picture](img/projectDemoimage.png)
 
 ## Features
 - AI mode with moderate difficulty
