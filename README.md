@@ -13,8 +13,8 @@ A web based Tic Tac toe game with AI mode.
 - Javascript
 - Css
 ## Outcome
-- Learned Benefits of using Single Responsibility Principle
-- Improved usage of modular design pattern
+- Learned Benefits of using Single Responsibility Principle.
+- Improved usage of modular design pattern.
 ## Navigation
 - My next project [Todo App](https://github.com/MAliHassanDev/To-Do-List)
 - My previous project [Youtube Homepage](https://github.com/MAliHassanDev/YouTube-Website)
