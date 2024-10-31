@@ -2,7 +2,7 @@
 
 A web based Tic Tac toe game with AI mode.
 
-## [Live Preview](https://malihassandev.github.io/Calculator/)
+## [Live Preview](https://malihassandev.github.io/Tic-Tac-Toe)
 
 ![Tic Tac Toe Project demo picture](img/projectDemoimage.png)
 
